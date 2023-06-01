@@ -1,0 +1,211 @@
+/*---------------------------------------------------------------- common css */
+
+/* fonts css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+
+/*-----------------------------------------------------------------------menubar css*/
+.header {
+    width: 100%;
+    left: 0;
+    top: 0;
+    background-color: rgb(255, 255, 255);
+  }
+  
+  .header-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 4px;
+  }
+  
+  .header .logo {
+    padding: 0 15px;
+  }
+
+  
+  .header .nav-menu {
+    padding: 0 15px;
+  }
+  
+  .header .menu>.menu-item {
+    display: inline-block;
+    margin-left: 30px;
+    position: relative;
+  }
+  
+  /*------------------------ if you want change the menubar typography. just change here color property */
+  
+  .header .menu>.menu-item>a {
+    display: block;
+    padding: 12px 0;
+    font-size: 17px;
+    text-decoration: none;
+    color: #000000;
+    text-transform: uppercase;
+    font-weight: 500;
+    transition: all 0.2s ease;
+  }
+  
+  /*---------------------- if you want to change menuar list hover color, just change color property */
+  
+  .header .menu>.menu-item>.sub-menu>.menu-item>a:hover,
+  .header .menu>.menu-item:hover>a {
+    color: #000000d8;
+    ;
+  }
+  
+  
+  .header .open-nav-menu {
+    height: 34px;
+    width: 40px;
+    margin-right: 15px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding-bottom: 8px;
+  }
+  
+  
+  /*--------------------- Responsive hamburger typography starts here */
+  
+  .header .open-nav-menu span {
+    display: block;
+    height: 3px;
+    width: 24px;
+    background-color: #000000;
+    position: relative;
+  }
+  
+  .header .open-nav-menu span:before,
+  .header .open-nav-menu span:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    box-sizing: border-box;
+  }
+  
+  .header .open-nav-menu span:before {
+    top: -7px;
+  }
+  
+  .header .open-nav-menu span:after {
+    top: 7px;
+  }
+  
+  .header .close-nav-menu {
+    height: 40px;
+    width: 40px;
+    background-color: #ffffff;
+    margin: 0 0 15px 15px;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .header .close-nav-menu img {
+    width: 16px;
+  }
+  
+  .header .menu-overlay {
+    position: fixed;
+    z-index: 999;
+    background-color: rgba(0, 0, 0, 0.5);
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s ease;
+  }
+  
+  /*--------------------- Responsive hamburger typography end here */
+  
+  /* responsive for mobile devices*/
+  
+  @media(max-width: 991px) {
+    .header .menu-overlay.active {
+      visibility: visible;
+      opacity: 1;
+    }
+  
+    /*------------------ you can change background color for mobile devices */
+    .header .nav-menu {
+      position: fixed;
+      right: -280px;
+      visibility: hidden;
+      width: 280px;
+      height: 100%;
+      top: 0;
+      overflow-y: auto;
+      background-color: #ffffff;
+      ;
+      z-index: 1000;
+      padding: 15px 0;
+      transition: all 0.5s ease;
+    }
+  
+    .header .nav-menu.open {
+      visibility: visible;
+      right: 0px;
+    }
+  
+    .header .menu>.menu-item {
+      display: block;
+      margin: 0;
+    }
+  
+    .header .menu>.menu-item-has-children>a {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  
+    /*---------------------- you can change menubar list color and border for mobile devices */
+    .header .menu>.menu-item>a {
+      color: #000000;
+      padding: 12px 15px;
+      border-bottom: 1px solid #e7e7e7;
+    }
+    .header .menu>.menu-item>a:hover {
+      color: #000000;
+      padding: 12px 15px;
+      border-bottom: 1px solid #e7e7e7;
+      transform: translateX(5px);
+    }
+  
+    .header .menu>.menu-item:first-child>a {
+      border-top: 1px solid #cbcbcb;
+    }
+  
+    .header .close-nav-menu,
+    .header .open-nav-menu {
+      display: flex;
+    }
+  }
+  
+
+
+ 
+
+
+
+
+
+
+
